@@ -6,8 +6,6 @@ header {
     flex-wrap: wrap;
     gap: 1rem;
     padding: .5rem 1rem;
-    position: sticky;
-    top: 0;
 }
 
 header > nav > :last-child {
