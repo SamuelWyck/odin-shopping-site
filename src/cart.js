@@ -10,12 +10,12 @@ class Cart {
         this.#cart.push(item);
     };
 
-    removeItem(item) {
+    removeItem(itemId) {
         const newCart = [];
         let found = false;
 
-        for (let oldItem of this.#cart) {
-            if (!found && oldItem.id === item.id) {
+        for (let item of this.#cart) {
+            if (!found && item.id === itemId) {
                 found = true;
                 continue;
             }
