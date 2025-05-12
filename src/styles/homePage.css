@@ -45,7 +45,7 @@
 .statement-section {
     /* background-color: #f3f3f3; */
     background-color: rgb(255, 255, 255, .7);
-    padding: 5rem 3rem 6rem 3rem;
+    padding: 6rem 3rem 7.3rem 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,4 +63,20 @@
     font-weight: 500;
     line-height: 2rem;
     max-width: 60ch;
+}
+
+.top-products-section > p {
+    color: var(--green);
+    font-size: clamp(1.5rem, 1rem + 4vw, 2.5rem);
+    font-weight: bold;
+    text-align: center;
+    margin: 5rem 0;
+}
+
+.top-products-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
 }

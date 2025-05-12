@@ -1,7 +1,28 @@
 import "../styles/homePage.css";
+import { useOutletContext } from "react-router-dom";
+import ProductCard from "./productCard.jsx";
+
 
 
 function HomePage() {
+    const context = useOutletContext();
+    if (context.products.length === 0) {
+        return null
+    }
+
+
+    const topProducts = [];
+    for (let i = 0; i < 3; i += 1) {
+        const productData = context.products[i];
+        const productCard = <ProductCard 
+            data={productData}
+            counterRef={context.counterRef}
+            cartRef={context.cartRef}
+            key={productData.id}
+        />
+        topProducts.push(productCard);
+    }
+
 
     return (
     <main className="homepage-main">
@@ -18,6 +39,9 @@ function HomePage() {
         </section>
         <section className="top-products-section">
             <p>Top Products</p>
+            <div className="top-products-list">
+                {topProducts}
+            </div>
         </section>
     </main>
     );
