@@ -9,8 +9,8 @@ import APIManager from './APIManager.js';
 
 
 function App() {
-    const cart = useRef(new Cart);
-    const [products, setProducts] = useState(null);
+    const cartRef = useRef(new Cart);
+    const [products, setProducts] = useState([]);
 
     useEffect(function() {
         const api = new APIManager();
@@ -20,7 +20,7 @@ function App() {
     }, []);
     
     const counterRef = createRef();
-    const counter = <Counter ref={counterRef} count={cart.current.getItemCount()} />
+    const counter = <Counter ref={counterRef} count={cartRef.current.getItemCount()} />
 
     return (
         <>
@@ -32,7 +32,7 @@ function App() {
             {counter}
             </Link>
         </Header>
-        <Outlet />
+        <Outlet context={{products, cartRef, counterRef}}/>
         </>
     );
 };
