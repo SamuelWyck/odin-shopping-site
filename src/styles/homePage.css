@@ -34,11 +34,33 @@
 }
 
 .banner-text > :first-child {
-    font-size: 5rem;
     font-size: clamp(2rem, 2rem + 8vw, 5rem);
 }
 
 .banner-text > :last-child {
     font-size: 1.5rem;
     font-size: clamp(.9rem, .7rem + 1vw, 1.5rem);
+}
+
+.statement-section {
+    /* background-color: #f3f3f3; */
+    background-color: rgb(255, 255, 255, .7);
+    padding: 5rem 3rem 6rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.statement-section > :first-child {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.statement-section > :last-child {
+    font-size: clamp(.8rem, .1rem + 2vw, 1.1rem);
+    font-weight: 500;
+    line-height: 2rem;
+    max-width: 60ch;
 }
