@@ -7,9 +7,9 @@ const routes = [
     {
         path: "/",
         element: <App />,
-        errorElement: <ErrorPage />,
         children: [
             {index: true, element: <HomePage />},
+            {path: "*", element: <ErrorPage />},
         ]
     },
 ];
