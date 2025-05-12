@@ -43,6 +43,10 @@ function HomePage() {
                 {topProducts}
             </div>
         </section>
+        <section className="quote-section">
+            <p>"I have personally made sure that all of our products are legally and ethically sourced. Those 'Made in Iran' labels were a manufacturing error. On a unrelated note, the child labor allegations against us have been dropped due to lack of proof."</p>
+            <p><i>-Truste Mee Sr. CEO of shopBay</i></p>
+        </section>
     </main>
     );
 };
