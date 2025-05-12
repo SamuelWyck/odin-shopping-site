@@ -1,0 +1,11 @@
+footer {
+    background-color: var(--green);
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+footer > p {
+    color: var(--linen);
+    font-size: 1.1rem;
+}

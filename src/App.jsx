@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/header.jsx';
+import Footer from './components/footer.jsx';
 import { Link, Outlet } from 'react-router-dom';
 import cartImg from "./assets/cart.svg";
 import { createRef, useEffect, useRef, useState } from 'react';
@@ -33,6 +34,7 @@ function App() {
             </Link>
         </Header>
         <Outlet context={{products, cartRef, counterRef}}/>
+        <Footer></Footer>
         </>
     );
 };
