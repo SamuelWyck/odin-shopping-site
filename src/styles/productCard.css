@@ -1,0 +1,41 @@
+.product-img-wrapper {
+    max-width: 200px;
+}
+
+.product-card img {
+    width: 100%;
+    border: 2px solid var(--green);
+    border-radius: 10px;
+}
+
+.product-card {
+    background-color: rgb(255, 255, 255, .7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 300px;
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+
+.product-card > p {
+    font-weight: bold;
+    max-width: 30ch;
+}
+
+.product-card > button {
+    cursor: pointer;
+    background-color: var(--green);
+    font-family: "roboto", sans-serif;
+    font-size: 1.1rem;
+    color: var(--linen);
+    padding: .5rem 1rem;
+    border: 2px solid var(--green);
+}
+
+.product-card > button:hover {
+    background-color: var(--linen);
+    color: var(--green);
+}
+
