@@ -1,10 +1,14 @@
 import App from "./App.jsx";
+import HomePage from "./components/homepage.jsx";
 
 
 const routes = [
     {
         path: "/",
-        element: <App />
+        element: <App />,
+        children: [
+            {index: true, element: <HomePage />},
+        ]
     },
 ];
 
