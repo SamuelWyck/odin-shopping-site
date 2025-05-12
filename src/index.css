@@ -9,6 +9,9 @@
 html {
   font-size: 16px;
   font-family: "roboto", sans-serif;
+  --green: #495F41;
+  --linen: #F3E9DC;
+  --blue: #2F3061;
 }
 
 
