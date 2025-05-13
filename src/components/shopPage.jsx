@@ -6,7 +6,6 @@ import "../styles/shopPage.css";
 
 function ShopPage() {
     const context = useOutletContext();
-    console.log(context.products)
     const [products, setProducts] = useState(createProductList(context));
 
 
