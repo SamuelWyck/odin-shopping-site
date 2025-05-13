@@ -26,8 +26,11 @@
     left: 0;
 }
 
+.side-menu:not(.showing) {
+    margin-left: 1rem;
+}
+
 .side-menu.showing {
-    background-color: #fafafa;
     background-color: rgb(255, 255, 255, .7);;
     padding: 0 2rem 2rem 2rem;
     animation-name: fade-in;
