@@ -23,6 +23,10 @@ function App() {
     const counterRef = createRef();
     const counter = <Counter ref={counterRef} count={cartRef.current.getItemCount()} />
 
+    if (products.length === 0) {
+        return null;
+    }
+
     return (
         <>
         <Header>
