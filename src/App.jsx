@@ -12,20 +12,20 @@ import APIManager from './APIManager.js';
 function App() {
     const cartRef = useRef(new Cart);
     const [products, setProducts] = useState([]);
-    const [counterRef, setCounterRef] = useState(createRef())
-    const [counter, setCounter] = useState(<Counter ref={counterRef} count={cartRef.current.getItemCount()} />);
+    const [renderKey, setRenderKey] = useState(0);
+
 
     useEffect(function() {
         const api = new APIManager();
         api.getProducts().then(function(res) {
             setProducts(res);
+            setRenderKey(r => r + 1)
         });
     }, []);
     
+    const counterRef = createRef();
+    const counter = <Counter ref={counterRef} count={cartRef.current.getItemCount()} />
 
-    if (products.length === 0) {
-        return null;
-    }
 
     return (
         <>
@@ -37,7 +37,7 @@ function App() {
             {counter}
             </Link>
         </Header>
-        <Outlet context={{products, cartRef, counterRef}}/>
+        <Outlet key={renderKey} context={{products, cartRef, counterRef}}/>
         <Footer></Footer>
         </>
     );
