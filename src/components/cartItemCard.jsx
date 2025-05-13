@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/cartItemCard.css";
 
 
-function CartItemCard({data, cartRef, counterRef}) {
+function CartItemCard({data, cartRef, counterRef, setTotalPrice}) {
     const [quantity, setQuantity] = useState(data.quantity);
 
 
@@ -14,10 +14,20 @@ function CartItemCard({data, cartRef, counterRef}) {
     const price = formatter.format(data.price * quantity);
 
 
+    function getTotalPrice() {
+        let price = 0;
+        for (let item of cartRef.current.getCart()) {
+            price += item.price;
+        }
+        return price;
+    };
+
+
     function decreaseQuantity() {
         cartRef.current.removeItem(data.id);
         setQuantity(quantity - 1);
         counterRef.current.update(-1);
+        setTotalPrice(getTotalPrice());
     };
 
 
@@ -27,6 +37,7 @@ function CartItemCard({data, cartRef, counterRef}) {
         cartRef.current.addItem(newItem);
         counterRef.current.update(1);
         setQuantity(quantity + 1);
+        setTotalPrice(getTotalPrice());
     };
 
 
@@ -44,9 +55,9 @@ function CartItemCard({data, cartRef, counterRef}) {
             <p className="cart-item-price">Price: {price}</p>
             <div className="quantity-control">
                 <p>Quantity</p>
-                <button onClick={decreaseQuantity}>-</button>
-                <span>{quantity}</span>
-                <button onClick={increaseQuantity}>+</button>
+                <button className="decrease-quant-btn" onClick={decreaseQuantity}>-</button>
+                <span className="item-quantity">{quantity}</span>
+                <button className="increase-quant-btn" onClick={increaseQuantity}>+</button>
             </div>
         </div>
     </div>
