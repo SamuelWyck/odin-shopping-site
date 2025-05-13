@@ -12,6 +12,8 @@ import APIManager from './APIManager.js';
 function App() {
     const cartRef = useRef(new Cart);
     const [products, setProducts] = useState([]);
+    const [counterRef, setCounterRef] = useState(createRef())
+    const [counter, setCounter] = useState(<Counter ref={counterRef} count={cartRef.current.getItemCount()} />);
 
     useEffect(function() {
         const api = new APIManager();
@@ -20,8 +22,6 @@ function App() {
         });
     }, []);
     
-    const counterRef = createRef();
-    const counter = <Counter ref={counterRef} count={cartRef.current.getItemCount()} />
 
     if (products.length === 0) {
         return null;
