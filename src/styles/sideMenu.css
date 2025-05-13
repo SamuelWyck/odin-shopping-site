@@ -1,0 +1,68 @@
+.side-menu > button > img {
+    width: 45px;
+    filter: invert(32%) 
+    sepia(30%) 
+    saturate(412%) 
+    hue-rotate(59deg) 
+    brightness(98%) 
+    contrast(92%);
+}
+
+.side-menu > button {
+    background: none;
+    display: flex;
+    border: none;
+    cursor: pointer;
+}
+
+.hide-menu-btn {
+    margin-left: auto;
+    margin-top: .5rem;
+}
+
+.side-menu {
+    position: absolute;
+    top: 150px;
+    left: 0;
+}
+
+.side-menu.showing {
+    background-color: #fafafa;
+    background-color: rgb(255, 255, 255, .7);;
+    padding: 0 2rem 2rem 2rem;
+    animation-name: fade-in;
+    transform-origin: left;
+    animation-duration: .25s;
+    animation-timing-function: ease-in-out;
+}
+
+.side-menu > .menu-content > p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--green);
+    margin-bottom: 2rem;
+    margin-top: .5rem;
+}
+
+.side-menu li {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.menu-content button {
+    background: none;
+    border: none;
+    font-family: "roboto", sans-serif;
+    color: var(--green);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.menu-content button:hover {
+    text-decoration: underline;
+}
+
+@keyframes fade-in {
+    0% {opacity: 0; transform: scaleX(0);}
+    100% {opacity: 1;}
+}
