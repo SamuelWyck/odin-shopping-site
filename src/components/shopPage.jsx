@@ -6,13 +6,13 @@ import "../styles/shopPage.css";
 
 function ShopPage() {
     const context = useOutletContext();
+    console.log(context.products)
     const [products, setProducts] = useState(createProductList(context));
 
 
     function createProductList(context) {
         const productElements = [];
         for (let productData of context.products) {
-            console.log(productData)
             const productCard = <ProductCard 
                 data={productData}
                 counterRef={context.counterRef}
