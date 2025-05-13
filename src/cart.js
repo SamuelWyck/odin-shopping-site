@@ -21,6 +21,7 @@ class Cart {
             }
             newCart.push(item);
         }
+        this.#cart = newCart;
     };
 
     clearCart() {
