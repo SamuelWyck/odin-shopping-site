@@ -2,11 +2,28 @@ import { useOutletContext } from "react-router-dom";
 import { Link } from "react-router-dom";
 import CartItemCard from "./cartItemCard.jsx";
 import "../styles/cartPage.css";
+import { useState } from "react";
 
 
 function CartPage() {
     const context = useOutletContext();
     const cart = context.cartRef.current;
+    const [totalPrice, setTotalPrice] = useState(getTotalPrice());
+
+
+    const formatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD"
+    });
+
+
+    function getTotalPrice() {
+        let price = 0;
+        for (let item of cart.getCart()) {
+            price += item.price;
+        }
+        return price;
+    };
     
 
     function getCheckoutCart() {
@@ -31,6 +48,7 @@ function CartPage() {
                 key={item.id}
                 cartRef={context.cartRef}
                 counterRef={context.counterRef}
+                setTotalPrice={setTotalPrice}
             />
             elementList.push(card);
         }
@@ -50,8 +68,9 @@ function CartPage() {
 
     return (
     <main className="cart">
-        <div>
+        <div className="checkout-info">
             <p>Shopping Cart</p>
+            <p className="total-price">Total: {formatter.format(totalPrice)}</p>
             <button className="checkout-btn">Checkout</button>
         </div>
         <div className="cart-item-list">

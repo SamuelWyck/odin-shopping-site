@@ -33,3 +33,56 @@ main.cart-empty {
 .cart {
     background-color: var(--linen);
 }
+
+.checkout-info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    margin: 4rem 2rem;
+}
+
+.checkout-info > :first-child {
+    font-size: clamp(1.3rem, .1rem + 4vw, 2rem);
+    font-weight: bold;
+    color: var(--green);
+
+}
+
+.checkout-info .total-price {
+    font-size: clamp(1rem, .5rem + 2vw, 1.3rem);
+    font-weight: bold;
+}
+
+.checkout-info > button {
+    background-color: var(--green);
+    border: 2px solid var(--green);
+    border-radius: 30px;
+    color: var(--linen);
+    font-size: 1.3rem;
+    font-family: "roboto", sans-serif;
+    padding: .5rem 3rem;
+    cursor: pointer;
+}
+
+.checkout-info > button:hover {
+    color: var(--green);
+    background-color: var(--linen);
+}
+
+.cart-item-list {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+
+@media only screen and (width <= 600px) {
+    .checkout-info {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
