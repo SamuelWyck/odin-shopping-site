@@ -31,7 +31,7 @@ class Counter extends Component {
             content = 9;
         }
 
-        return <p className="counter">{content}{content <= 9 || plusSpan}</p>
+        return <p className="counter">{content}{this.state.count <= 9 || plusSpan}</p>
     };
 };
 
