@@ -25,7 +25,7 @@ function CartItemCard({data, cartRef, counterRef, setTotalPrice}) {
 
     function decreaseQuantity() {
         cartRef.current.removeItem(data.id);
-        setQuantity(quantity - 1);
+        setQuantity(q => q - 1);
         counterRef.current.update(-1);
         setTotalPrice(getTotalPrice());
     };
@@ -36,7 +36,7 @@ function CartItemCard({data, cartRef, counterRef, setTotalPrice}) {
         delete newItem.quantity;
         cartRef.current.addItem(newItem);
         counterRef.current.update(1);
-        setQuantity(quantity + 1);
+        setQuantity(q => q + 1);
         setTotalPrice(getTotalPrice());
     };
 
